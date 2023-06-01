@@ -1,0 +1,29 @@
+{
+	"name": "airis-colombia-prueba",
+	"version": "0.0.1",
+	"description": "This is a test for Imagine Apps developer position",
+	"author": {
+		"name": "Alexander Daza",
+		"email": "dev.alexander.daza@gmail.com",
+		"url": "https://github.com/devalexanderdaza"
+	},
+	"contributors": [
+		{
+			"name": "Alexander Daza",
+			"email": "dev.alexander.daza@gmail.com",
+			"url": "https://github.com/devalexanderdaza"
+		}
+	],
+	"private": true,
+	"license": "PRIVATE",
+	"scripts": {
+		"dev": "turbo run dev",
+		"build": "turbo run build"
+	},
+	"devDependencies": {
+		"turbo": "1.10.0"
+	},
+	"workspaces": [
+		"apps/*"
+	]
+}

@@ -3,3 +3,4 @@ apps/backend/dist
 apps/frontend/dist
 .DS_Store
 .env
+*.db

@@ -1,24 +1,27 @@
 import { Injectable } from '@angular/core';
-import {LoginI} from '../../modelos/login.interface';
-import {ResponseI} from '../../modelos/response.interface';
-import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs'
+import { HttpClient } from '@angular/common/http';
+
+import { Observable } from 'rxjs';
+
+import { LoginI } from '../../modelos/login.interface';
+import { ResponseI } from '../../modelos/response.interface';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ApiService {
-  url: string = 'https://airis.onrender.com/v1/';
+  url: string = 'http://localhost:5000/api/';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  loginByEmail(form:LoginI): Observable<ResponseI>{
-    let direccion = this.url + "auth/login"
-    return this.http.post<ResponseI>(direccion, form)
+  loginByEmail(form: LoginI) {
+    return {
+      data: 'token',
+    };
   }
 
-  ventas(): Observable<ResponseI>{
-    let direccion = this.url + "sales"
-    return this.http.get<ResponseI>(direccion)
+  ventas(): Observable<ResponseI> {
+    let direccion = this.url + 'sales';
+    return this.http.get<ResponseI>(direccion);
   }
 }

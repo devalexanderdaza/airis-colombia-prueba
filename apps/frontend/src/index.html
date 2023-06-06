@@ -6,8 +6,52 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 </head>
-<body>
+<body class="container">
   <app-root></app-root>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.js"></script>
+  <script>
+    var map = L.map('map').setView([0, 0], 2);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+    }).addTo(map);
+
+    var markerModal = new bootstrap.Modal(document.getElementById('markerModal'), {
+      backdrop: 'static',
+      keyboard: false
+    });
+
+    var marker;
+
+    function addMarker() {
+      var description = document.getElementById('description').value;
+      var latitude = document.getElementById('latitude').value;
+      var longitude = document.getElementById('longitude').value;
+
+      if (marker) {
+        marker.setLatLng([latitude, longitude]).bindPopup(description).openPopup();
+      } else {
+        marker = L.marker([latitude, longitude]).addTo(map).bindPopup(description).openPopup();
+      }
+
+      markerModal.hide();
+    }
+
+    map.on('click', function(e) {
+      var latLng = e.latlng;
+      var latitude = latLng.lat;
+      var longitude = latLng.lng;
+
+      document.getElementById('latitude').value = latitude;
+      document.getElementById('longitude').value = longitude;
+
+      markerModal.show();
+    });
+  </script>
 </body>
 </html>

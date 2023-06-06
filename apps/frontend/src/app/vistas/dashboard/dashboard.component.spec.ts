@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RealStateComponent } from './real-state.component';
+import { DashboardComponent } from './dashboard.component';
 
-describe('RealStateComponent', () => {
-  let component: RealStateComponent;
-  let fixture: ComponentFixture<RealStateComponent>;
+describe('DashboardComponent', () => {
+  let component: DashboardComponent;
+  let fixture: ComponentFixture<DashboardComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [RealStateComponent]
+      declarations: [DashboardComponent]
     });
-    fixture = TestBed.createComponent(RealStateComponent);
+    fixture = TestBed.createComponent(DashboardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

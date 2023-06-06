@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MapComponent } from './map.component';
+import { NuevoComponent } from './nuevo.component';
 
-describe('MapComponent', () => {
-  let component: MapComponent;
-  let fixture: ComponentFixture<MapComponent>;
+describe('NuevoComponent', () => {
+  let component: NuevoComponent;
+  let fixture: ComponentFixture<NuevoComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [MapComponent]
+      declarations: [NuevoComponent]
     });
-    fixture = TestBed.createComponent(MapComponent);
+    fixture = TestBed.createComponent(NuevoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
